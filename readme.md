@@ -6,6 +6,8 @@
 - Identify useful Ruby enumerables, including `.each`, `.map` and `.select`.
 - Use enumerables to traverse, sort and modify collections.
 
+<!-- TODO: Re-intro collections as part of framing for enumerables  -->
+
 ## Review: Ruby Collections (15 minutes)
 
 What are the types of collections we have in ruby?
@@ -64,7 +66,7 @@ Start by reviewing JS `for` loops.
 
 ```js
 var fruits = ["apple", "banana", "cherry"];
-for(var i = 0; i < fruits.length; i++) {
+for (var i = 0; i < fruits.length; i++) {
   console.log(fruits[i]);
 }
 ```
@@ -91,9 +93,6 @@ Here are some alternate ways of looping
 * `.times` (called on a number)
   * runs the loop a specific of times
 
-
-
-
 ### `break`
 
 `break` lets us end -- or "break" out of -- a loop.
@@ -117,7 +116,7 @@ end
 
 Q: What numbers do you expect to see on the screen when we run this  loop?
 ---
-
+<!-- TODO: determine better `next` example  -->
   ```ruby
   10.times do |i|
     if i == 5
@@ -128,10 +127,15 @@ Q: What numbers do you expect to see on the screen when we run this  loop?
   ```
 ## Break (10 minutes)
 
+<!-- TODO: See if we need review built into enums lesson  -->
 
 ## Enumerables
 
+<!-- TODO: Add Intro  -->
+
 ### What Are Enumerables?
+<!-- TODO: compare and contrast loops from enumerables  -->
+<!-- i.e. loops just execute a certain block of code for a given amount of time, enumerables are used in relation to data collections  -->
 
 Ruby's Enumerable methods allow us to traverse, search and sort data collections (i.e., arrays and hashes).
 - [Documentation](http://ruby-doc.org/core-2.2.3/Enumerable.html)
@@ -170,6 +174,8 @@ numbers = [ 1, 2, 3, 4, 5 ]
 numbers.each { |number| puts number * 2 }
 ```
 
+<!-- TODO: Instead of diagraming, use [code visualizer](http://pythontutor.com/ruby.html#mode=edit)   -->
+
 **DIAGRAM:** EACH
 
 ##### Code Block Format
@@ -190,6 +196,8 @@ Single-line
 - `|number|` - iteration variable
 
 ### Exercise: Practice Each (10min)
+
+<!-- NOTE: Might have to intro puts for ex.  -->
 
 Use `each` to do the following...  
 
@@ -225,6 +233,7 @@ Use `each` to do the following...
   toppings = [ "gummi bears", "hot fudge", "butterscotch", "rainbow sprinkles", "chocolate sprinkles" ]
   ```
 
+<!-- TODO: incorporate CFU   -->
 Can I get a quick fist-of-five on how you feel about `each` and enumerables so far?
 - There are many enumerable methods.  All of them look and feel similar to `each`.
 
@@ -250,6 +259,7 @@ doubled
 
 **NOTE:** We did not have to type out any variable assignment in the code block!
 
+<!-- TODO: Instead of diagraming, use [code visualizer](http://pythontutor.com/ruby.html#mode=edit)   -->
 **DIAGRAM:** MAP
 
 ### Exercise: Practice Map (5min)
@@ -280,7 +290,6 @@ Use `map` to do the following...
   #=> [-89.2, -17.8, 0, 60, 100]
   ```
 
-
 ## Group Exercise: Documentation Dive (25min)
 
 Instructions: Each group will spend **10 minutes** using Ruby documentation to look up an assigned enumerable. Prepare your own definition of what it does and whiteboard an example.
@@ -306,3 +315,9 @@ Groups
 Combines your knowledge of Ruby basics and enumerables...  
 
 [High Card](https://github.com/ga-dc/high_card)
+
+<!-- TODO: Add sample quiz questions  -->
+
+<!-- TODO: Add Closing  -->
+
+<!-- TODO: Add Resources  -->
