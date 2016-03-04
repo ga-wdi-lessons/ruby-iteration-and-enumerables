@@ -14,7 +14,7 @@
 
 Today we will be going over enumerables in Ruby, one of the most powerful modules that comes included in the language out of the box.
 
-We will get into how to use enumerables later on this lesson, but first just know that enumerables essentially give us fun ways to play with data in Ruby.
+We will get into how to use enumerables later on this lesson, but first just know that enumerables essentially are a more readable, expressive way to work with collections of data in Ruby.
 
 Whenever we talk about data in Ruby, its important to review how Ruby handles groups of data.
 
@@ -22,7 +22,7 @@ Whenever we talk about data in Ruby, its important to review how Ruby handles gr
 
 **Q**: What are the different types of collections in Ruby?
 
-### Arrays
+### [Arrays](http://ruby-doc.org/core-2.3.0/Array.html)
 
 ```rb
 fruits = ["apple", "banana", "cherry"]
@@ -42,7 +42,11 @@ fruits.join(", ") # "apple, banana, cherry, mango"
 fruits.join(" and ") # "apple and banana and cherry and mango "
 ```
 
-### Hashes
+**Q**: What's another "rubyist" way to add items to an array?
+---
+> A: using `<<`, or the shovel operator: e.g. `fruits << "peach"`
+
+### [Hashes](http://ruby-doc.org/core-2.3.0/Hash.html)
 
 Hashes are like Javascript Object Literals, but they are a bit more limited:
 
@@ -53,16 +57,26 @@ instructor = {
   favorite_foods: ["Tater Tots", "Cheese Steaks", "Kale Salad"]
 }
 
+# Access values from a hash
 instructor[:name] # "Bob"
 instructor[:age]  # 30
 instructor[:favorite_foods] # ["Tater Tots", "Cheese Steaks", "Kale Salad"]
 
+# Set values to an existing key
 instructor[:name] = "Robert"
 instructor[:name] # "Robert"
 
+# Add new key-value pairs
 instructor[:favorite_color] = "red"
 instructor[:favorite_color] # "red"
 ```
+
+#### Quick Quiz
+
+-  What's another "rubyist" way to add items to an array?
+-  What is one main difference between Ruby's `hashes` and Javascript's `object literals`?
+-  What are some useful methods we can call on collections?
+-  Where would I go look if I wanted to find more methods?
 
 ## Loops (20 / 30)
 
@@ -123,7 +137,6 @@ Ruby also has a plethora of other types of loops including:
   end
   puts i
 end
-
 ```
 
 ### `next`
@@ -180,6 +193,18 @@ and using what you know about loops and collections in Ruby, write a program tha
   - Anyone over 18, but under 21 can come in, but they are not to be served adult beverages
   - Create a new key-value pair for each `person` with `served` as a `boolean`
 
+**Double Bonus**
+- Write a function that takes 3 arguments: a list of people, an age limit, and capacity limit.
+- It should return a hash that looks like this:
+  ```ruby
+  {
+    accepted:
+      [ {name: "Jack", age: 22},  {name: "Jill", age: 31}, ...],
+    rejected:
+      [ {name: "Billy", age: 18},  {name: "Nancy", age: 31}, ...]
+  }
+  ```
+
 [A Solution](https://gist.github.com/nolds9/9f62c6f10740de8a9b8e)
 
 ## Break (10 / 60)
@@ -230,6 +255,8 @@ numbers.each { |number| puts number * 2 }
 ```
 
 **Visualize:** EACH: using this [code visualizer](http://pythontutor.com/ruby.html#mode=edit) let's look at how `each` operates under the hood
+
+> The `each` method yields a reference to **each element** in the collection, rather than a reference to the element's numerical index in the array.
 
 ##### Code Block Format
 
@@ -350,7 +377,7 @@ Groups
 - **Group 2:** Reject
 - **Group 3:** Find
 - **Group 4:** Select
-- **Group 5:** Partition
+- **Group 5:** Sort By
 - **Group 6:** Inject/Reduce
 
 **Bonus:** If you find yourself with extra time, you can:
@@ -366,7 +393,7 @@ Combine your knowledge of Ruby basics and enumerables to make our old nemesis a 
 ## Sample quiz questions
 
 1. What is the difference between `loops` and `enumerables` in Ruby?
-1. What are some loops in Ruby that are not in JS?
+1. What are some examples of loops in Ruby that are not in JS?
 2. Differentiate between Ruby's `each` and `map` methods
 3. What is an `iteration` variable?
 4. List 5 useful Ruby enumerable methods
