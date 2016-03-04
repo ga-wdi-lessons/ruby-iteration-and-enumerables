@@ -1,16 +1,24 @@
-# Ruby Enumerables: Learning Objectives
+# Ruby Enumerables
+
+## Learning Objectives
 
 - Review Ruby arrays and hashes
 - Use Ruby loops to iterate over code blocks.
 - Define what a Ruby enumerable method is.
-- Identify useful Ruby enumerables, including `.each`, `.map` and `.select`.
 - Use enumerables to traverse, sort and modify collections.
+- Identify useful Ruby enumerables, including `.each`, `.map` and `.select`.
 
-<!-- TODO: Re-intro collections as part of framing for enumerables  -->
+## Intro (10 / 10)
 
-## Review: Ruby Collections (15 minutes)
+Today we will be going over enumerables in Ruby, one of the most powerful modules that comes included in the language out of the box.
 
-What are the types of collections we have in ruby?
+We will get into how to use enumerables later on this lesson, but first just know that enumerables essentially give us fun ways to play with data in Ruby.
+
+Whenever we talk about data in Ruby, its important to review how Ruby handles groups of data.
+
+## Review: Ruby Collections
+
+**Q**: What are the different types of collections in Ruby?
 
 ### Arrays
 
@@ -18,51 +26,55 @@ What are the types of collections we have in ruby?
 fruits = ["apple", "banana", "cherry"]
 
 fruits.length # 3
-fruits.push("dates")
+fruits.push("date")
 fruits.length # 4
 
 fruits[0] # apple
-fruits[3] # dates
+fruits[3] # date
 
-fruits[3] = "durian"
-fruits[3] # durian
+fruits[3] = "mango"
+fruits[3] # mango
 
-fruits.join(" ") # "apple banana cherry"
-fruits.join(", ") # "apple, banana, cherry"
-fruits.join(" and ") # "apple and banana and cherry"
+fruits.join(" ") # "apple banana cherry mango"
+fruits.join(", ") # "apple, banana, cherry, mango"
+fruits.join(" and ") # "apple and banana and cherry and mango "
 ```
 
 ### Hashes
 
-Hashes are like javascript objects, but they are a bit more limited:
+Hashes are like Javascript Object Literals, but they are a bit more limited:
 
-```rb
+```ruby
 instructor = {
   name: "Bob",
   age: 30,
-  favorite_foods: ["Cheese Tots", "Cheese Steaks", "Kale Salad"]
+  favorite_foods: ["Tater Tots", "Cheese Steaks", "Kale Salad"]
 }
 
-instructor[:name] # Bob
+instructor[:name] # "Bob"
 instructor[:age]  # 30
-instructor[:favorite_foods] # ["Cheese Tots", "Cheese Steaks", "Kale Salad"]
+instructor[:favorite_foods] # ["Tater Tots", "Cheese Steaks", "Kale Salad"]
 
 instructor[:name] = "Robert"
-instructor[:name] # Robert
+instructor[:name] # "Robert"
 
 instructor[:favorite_color] = "red"
-instructor[:favorite_color] # red
+instructor[:favorite_color] # "red"
 ```
 
-## Loops (30min)
+## Loops (20 / 30)
 
-### Review JS Loops (5 minutes)
+Another similarity Ruby shares with Javascript is base support for various types of loops.
 
-Q: What loops did we use in Javascript?
+### Review JS Loops
+
+**Q**: What loops did we use in Javascript?
 ---
-> A: while, do-while, for, for-in, forEach
+> A: `while`, `do-while`, `for`, `for-in`, `forEach`
 
-Start by reviewing JS `for` loops.
+Let's start by reviewing JS `for` loops.
+
+Say we had our `fruits` example from earlier and we wanted to print each individual fruit in the console
 
 ```js
 var fruits = ["apple", "banana", "cherry"];
@@ -71,21 +83,21 @@ for (var i = 0; i < fruits.length; i++) {
 }
 ```
 
-## Looping with Ruby
-The closest equivelant to Javascripts for loop is Ruby's each enumerable
+### Looping with Ruby
+
+The closest equivalent to Javascript's `for` loop is Ruby's `for-in` loop
 
 ```rb
-fruits = ["apples", "bananas", "cherries"]
-fruits.each do |fruit|
-    puts fruit
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits
+  puts fruit
 end
-
 ```
 
-Here are some alternate ways of looping
+Ruby also has a plethora of other types of loops including:
 
 * `loop`
-  * loop runs uninterupted until stopped
+  * loop runs uninterrupted until stopped
 * `while`
   * runs the loop while the condition is true
 * `until`
@@ -93,11 +105,13 @@ Here are some alternate ways of looping
 * `.times` (called on a number)
   * runs the loop a specific of times
 
+> [Further Reading on Ruby loops](http://www.tutorialspoint.com/ruby/ruby_loops.htm)
+
 ### `break`
 
 `break` lets us end -- or "break" out of -- a loop.
 
-Q: What numbers do you expect to see on the screen when we run this  loop?
+**Q**: What numbers do you expect to see printed to the console when we run this loop?
 ---
 
 ```ruby
@@ -114,39 +128,78 @@ end
 
 `next` lets us skip to the next iteration of a loop.
 
-Q: What numbers do you expect to see on the screen when we run this  loop?
+**Q**: What numbers do you expect to see to see printed to the console when we run this loop?
 ---
-<!-- TODO: determine better `next` example  -->
-  ```ruby
-  10.times do |i|
-    if i == 5
-      next
-    end
-    puts i
-  end
-  ```
-## Break (10 minutes)
 
-<!-- TODO: See if we need review built into enums lesson  -->
+```ruby
+10.times do |i|
+  if i == 5
+    next
+  end
+  puts i
+end
+```
+
+## Exercise: Club Code (20 / 50)
+
+As the new manager of GA's Club Code, you been tasked with creating an automated bouncing system.
+
+The club's rules state:
+- Only people 18 and over are allowed in the door
+- No more than 8 people should be inside the club at any time
+
+Given a line of people:
+```ruby
+people = [
+  { name: "Jack", age: 16 },
+  { name: "Sam", age: 21 },
+  { name: "Jill", age: 23 },
+  { name: "Paul", age: 20 },
+  { name: "Mike", age: 16 },
+  { name: "Stan", age: 70 },
+  { name: "Chris", age: 17 },
+  { name: "Julie", age: 45 },
+  { name: "Suzy", age: 65 },
+  { name: "Eli", age: 28 },
+  { name: "Katie", age: 50 },
+  { name: "Ben", age: 33 }
+]
+```
+and using what you know about loops and collections in Ruby, write a program that:
+- Creates a new array of people inside the club
+- Allows the appropriate people into the club
+- Stops once 8 people have been admitted
+
+**Hints:**
+- How could you use `next` and/or `break` to alter the behavior of a loop?
+
+**Bonus**
+- Determine whether or not a person is to be served
+  - Anyone over 18, but under 21 can come in, but they are not to be served adult beverages
+  - Create a new key-value pair for each `person` with `served` as a `boolean`
+
+[A Solution](https://gist.github.com/nolds9/9f62c6f10740de8a9b8e)
+
+## Break (10 / 60)
 
 ## Enumerables
 
-<!-- TODO: Add Intro  -->
+### What Are Enumerables? (5 / 65)
 
-### What Are Enumerables?
-<!-- TODO: compare and contrast loops from enumerables  -->
-<!-- i.e. loops just execute a certain block of code for a given amount of time, enumerables are used in relation to data collections  -->
+The Enumerable module provides a set of methods to traverse, search, sort and manipulate collections.
 
-Ruby's Enumerable methods allow us to traverse, search and sort data collections (i.e., arrays and hashes).
+So how are enumerables different than loops you might ask? In general, loops just execute a certain block of code for a given amount of time, while enumerables are used in relation to data collections to more easily control and transform values in data sets.
+
+Since we already have a base understanding of loops and arrays and hashes, there's nothing new conceptually here. But you'll learn to do more with prettier, fewer lines of code.
 - [Documentation](http://ruby-doc.org/core-2.2.3/Enumerable.html)
 
 ### Useful Enumerables
 
-#### Each (20min)
+#### Each (20 / 85)
 
 The king (or queen) of enumerables, and the one you will most likely be using the most.
 - Iterates through and performs an action(s) on a collection.
-- Does not permanently modify the collection.
+- **Note**: Does not permanently modify the collection.
 
 If we were to emulate `.each` using plain ol' Ruby, it would look something like this...
 
@@ -161,7 +214,7 @@ while(i <= numbers.length) do
 end
 ```
 
-But `.each` looks like this, using the code block format...
+But using `.each` looks like this, with the code block format...
 
 ```ruby
 numbers = [ 1, 2, 3, 4, 5 ]
@@ -174,9 +227,7 @@ numbers = [ 1, 2, 3, 4, 5 ]
 numbers.each { |number| puts number * 2 }
 ```
 
-<!-- TODO: Instead of diagraming, use [code visualizer](http://pythontutor.com/ruby.html#mode=edit)   -->
-
-**DIAGRAM:** EACH
+**Visualize:** EACH: using this [code visualizer](http://pythontutor.com/ruby.html#mode=edit) let's look at how `each` operates under the hood
 
 ##### Code Block Format
 
@@ -195,9 +246,7 @@ Single-line
 - { } - replaces `do` and `end`; contains the iteration variable and code block
 - `|number|` - iteration variable
 
-### Exercise: Practice Each (10min)
-
-<!-- NOTE: Might have to intro puts for ex.  -->
+### Exercise: Practice Each (10 / 95)
 
 Use `each` to do the following...  
 
@@ -233,40 +282,36 @@ Use `each` to do the following...
   toppings = [ "gummi bears", "hot fudge", "butterscotch", "rainbow sprinkles", "chocolate sprinkles" ]
   ```
 
-<!-- TODO: incorporate CFU   -->
-Can I get a quick fist-of-five on how you feel about `each` and enumerables so far?
+Let's get a quick **Fist-of-Five** on how we feel about `each` and enumerables so far?
 - There are many enumerable methods.  All of them look and feel similar to `each`.
 
-## BREAK (10min)
+#### Map (10 / 105)
 
-#### Map (5min)
-
-Map is similar to `each`.  It iterates through each element in the collection,  but `map` generates a new collection with values based on the code block. Say we want to double our `numbers` array and store it in a new array...
+Map is similar to `each`.  It iterates through each element in the collection,  but `map` generates a **new collection** with values based on the code block. Say we want to double our `numbers` array and store it in a new array...
 
 ```ruby
 numbers = [ 1, 2, 3, 4, 5 ]
-doubled = numbers.map do |number|
+doubles = numbers.map do |number|
   number * 2
 end
-doubled
+doubles
 # => [ 2, 4, 6, 8, 10 ]
 
 # Alternate syntax
 numbers = [ 1, 2, 3, 4, 5 ]
-doubled = numbers.map { |number| number * 2 }
-doubled
+doubles = numbers.map { |number| number * 2 }
+doubles
 ```
 
 **NOTE:** We did not have to type out any variable assignment in the code block!
 
-<!-- TODO: Instead of diagraming, use [code visualizer](http://pythontutor.com/ruby.html#mode=edit)   -->
-**DIAGRAM:** MAP
+**VISUALIZE:** MAP: using this [code visualizer](http://pythontutor.com/ruby.html#mode=edit) let's look at how `map` operates under the hood
 
-### Exercise: Practice Map (5min)
+### Exercise: Practice Map (5 / 120)
 
 Use `map` to do the following...  
 
-- Create an array that appends "Duck" to everybody in this array of first names
+1. Create an array that appends "Duck" to everybody in this array of first names
 
   ```ruby
   first_names = [ "Donald", "Daisy", "Daffy" ]
@@ -274,7 +319,7 @@ Use `map` to do the following...
   #=> ["Donald Duck", "Daisy Duck"]
   ```
 
-- Create an array containing the squared values of every number in this array.
+2. Create an array containing the squared values of every number in this array.
 
   ```ruby
   numbers = [ 1, 3, 9, 11, 100 ]
@@ -282,7 +327,7 @@ Use `map` to do the following...
   # => [1, 9, 81, 121, 10000]
   ```
 
-- Create an array with the Celsius values for these Fahrenheit values.
+3. Create an array with the Celsius values for these Fahrenheit values.
 
   ```ruby
   fahrenheit_temps = [ -128.6, 0, 32, 140, 212 ]
@@ -290,7 +335,9 @@ Use `map` to do the following...
   #=> [-89.2, -17.8, 0, 60, 100]
   ```
 
-## Group Exercise: Documentation Dive (25min)
+## Break (10 / 130)
+
+## Group Exercise: Documentation Dive (20 / 150)
 
 Instructions: Each group will spend **10 minutes** using Ruby documentation to look up an assigned enumerable. Prepare your own definition of what it does and whiteboard an example.
 - You can test your example in IRB/Pry.
@@ -308,16 +355,23 @@ Groups
 - Pick out another enumerable that wasn't assigned to a group.
 - ...and/or think of another example for your assigned enumerable.
 
-## BREAK (10min)
+## Homework: High Card
 
-## Coding Exercise + Homework: High Card (30min)
+Combine your knowledge of Ruby basics and enumerables to make our old nemesis a piece of cake...
 
-Combines your knowledge of Ruby basics and enumerables...  
+[High Card](https://github.com/ga-wdi-exercises/high_card)
 
-[High Card](https://github.com/ga-dc/high_card)
+## Sample quiz questions
 
-<!-- TODO: Add sample quiz questions  -->
+1. What is the difference between `loops` and `enumerables` in Ruby?
+1. What are some loops in Ruby that are not in JS?
+2. Differentiate between Ruby's `each` and `map` methods
+3. What is an `iteration` variable?
+4. List 5 useful Ruby enumerable methods
 
-<!-- TODO: Add Closing  -->
+## Resources
 
-<!-- TODO: Add Resources  -->
+- [Intro to Ruby Enumerables](http://jamesgolick.com/2008/1/5/an-introduction-to-ruby-s-enumerable-module.html)
+- [Ruby Monk on Enumerables](https://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/44-collections/lessons/96-enumerators-and-enumerables)
+- [Ruby Explained: Awesome Enumerables](http://www.eriktrautman.com/posts/ruby-explained-map-select-and-other-enumerable-methods)
+- [Ruby Magic](http://ruby.bastardsbook.com/chapters/enumerables/)
