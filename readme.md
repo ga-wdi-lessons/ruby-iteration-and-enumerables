@@ -1,5 +1,7 @@
 # Ruby Enumerables
 
+[![Build Status](https://travis-ci.org/ga-wdi-lessons/ruby-enumerables.svg?branch=master)](https://travis-ci.org/ga-wdi-lessons/ruby-enumerables)
+
 ## Learning Objectives
 
 - Review Ruby arrays and hashes
@@ -8,7 +10,7 @@
 - Use enumerables to traverse, sort and modify collections.
 - Identify useful Ruby enumerables, including `.each`, `.map` and `.select`.
 
-## Intro (10 / 10)
+## Framing (10 / 10)
 
 Today we will be going over enumerables in Ruby, one of the most powerful modules that comes included in the language out of the box.
 
