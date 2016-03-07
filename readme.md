@@ -105,7 +105,7 @@ The closest equivalent to Javascript's `for` loop is Ruby's `for-in` loop
 
 ```rb
 fruits = ["apple", "banana", "cherry"]
-for fruit in fruits
+for fruit in fruits do
   puts fruit
 end
 ```
