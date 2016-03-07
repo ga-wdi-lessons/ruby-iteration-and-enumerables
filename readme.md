@@ -404,3 +404,4 @@ Combine your knowledge of Ruby basics and enumerables to make our old nemesis a 
 - [Ruby Monk on Enumerables](https://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/44-collections/lessons/96-enumerators-and-enumerables)
 - [Ruby Explained: Awesome Enumerables](http://www.eriktrautman.com/posts/ruby-explained-map-select-and-other-enumerable-methods)
 - [Ruby Magic](http://ruby.bastardsbook.com/chapters/enumerables/)
+- [Ruby Loops and Iterators](https://launchschool.com/books/ruby/read/loops_iterators)
