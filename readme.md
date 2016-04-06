@@ -11,8 +11,9 @@
 - Identify useful Ruby enumerables, including `.each`, `.map` and `.select`.
 
 ## Framing (10 / 10)
+One of the most common things we do as developers is to loop through data structures. We understand and learned how to do these things in Javascript. Now we're going to learn how to do them in ruby.  We'll start with the basics but then..
 
-Today we will be going over enumerables in Ruby, one of the most powerful modules that comes included in the language out of the box.
+We will be going over enumerables in Ruby, one of the most powerful modules that comes included in the language out of the box.
 
 We will get into how to use enumerables later on this lesson, but first just know that enumerables essentially are a more readable, expressive way to work with collections of data in Ruby.
 
@@ -123,12 +124,24 @@ Ruby also has a plethora of other types of loops including:
 
 > [Further Reading on Ruby loops](http://www.tutorialspoint.com/ruby/ruby_loops.htm)
 
+## Check this out
+
+```ruby
+10.times.do |i|
+  puts i
+end
+```
+
+What does this code do? (ST-WG)
+
 ### `break`
 
 `break` lets us end -- or "break" out of -- a loop.
 
 **Q**: What numbers do you expect to see printed to the console when we run this loop?
 ---
+
+
 
 ```ruby
 10.times do |i|
@@ -368,7 +381,10 @@ Use `map` to do the following...
 
 ## Group Exercise: Documentation Dive (20 / 150)
 
-Instructions: Each group will spend **10 minutes** using Ruby documentation to look up an assigned enumerable. Prepare your own definition of what it does and whiteboard an example.
+Instructions: Each group will spend **10 minutes** using Ruby documentation to look up an assigned enumerable. Prepare the following for your demo:
+- your own definition of what it does
+- whiteboard an example.
+- at a high level, try to find/think of a use case of this enumerable in the wild, doesn't have to be the actual code just conceptually similar
 - You can test your example in IRB/Pry.
 - [Documentation](http://ruby-doc.org/core-2.2.3/Enumerable.html)
 
