@@ -156,7 +156,7 @@ end
 
 `next` lets us skip to the next iteration of a loop.
 
-**Q**: What numbers do you expect to see to see printed to the console when we run this loop?
+**Q**: What numbers do you expect to see printed to the console when we run this loop?
 ---
 
 ```ruby
