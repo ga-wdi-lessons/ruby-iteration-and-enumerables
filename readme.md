@@ -144,7 +144,7 @@ end
 ```rb
 users = ["Alice", "Bob", "Carol"]
 index = 0
-until index === users.length
+until index == users.length
   puts users[index]
   index += 1
 end
@@ -158,7 +158,7 @@ index = 0
 loop do
   puts users[index]
   index += 1
-  break if index === users.length
+  break if index == users.length
 end
 ```
 
@@ -187,7 +187,7 @@ Try this code:
 
 ```rb
 10.times do |i|
-  if i % 2 === 0
+  if i % 2 == 0
     next
   end
   puts i
