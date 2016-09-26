@@ -11,7 +11,8 @@
 - Identify useful Ruby enumerables, including `.each`, `.map` and `.select`.
 
 ## Framing (10 / 10)
-One of the most common things we do as developers is to loop through data structures.
+
+One of the most common things we do as developers is to iterate through data structures.
 
 Whenever we talk about data in Ruby, its important to review how Ruby handles groups of data.
 
@@ -173,7 +174,7 @@ end
 
 <details>
 <summary>If we change `puts users[index]` to `puts index`, what will the result be?</summary>
-`1 2 3 4... 10`
+`1 2 3`
 </details>
 
 <details>
@@ -212,6 +213,8 @@ end
 Loops execute a certain block of code a certain number of times.
 
 **Enumerables** are loops *used specifically to do something to or with each item in an collection.*
+
+Enumerables are great at traversing, searching, filtering, and modifying collections of data in Ruby.
 
 **Why?** It DRYs up your code considerably. Consider:
 
@@ -328,7 +331,7 @@ puts uppercase.join(", ")
 
 Consider:
 
-```
+```ruby
 cart = ["shoes", "watch", "computer"]
 uppercase = []
 cart.each{|product| uppercase.push(product.upcase) }
@@ -342,7 +345,7 @@ puts uppercase.join(", ")
 ```
 
 <details>
-<summmary>What is the difference in the result of these two snippets?</summary>
+<summary>What is the difference in the result of these two snippets?</summary>
 Nothing: they have the same result. They are two ways of doing the same thing.
 </details>
 
@@ -361,7 +364,7 @@ Below is the same snippet, but with `.map!` instead of `.map`.
 
 <details>
 <summary>What does `!` often indicate in Ruby?</summary>
-That this method is "dangerous", usually becase it will modify the object upon which it was called.
+That this method is "dangerous", usually because it will modify the object upon which it was called.
 </details>
 
 ```rb
@@ -416,12 +419,12 @@ Instructions: Each group will spend **10 minutes** using Ruby documentation to l
 
 The enumerables are:
 
-- Each With Index
-- Reject
-- Find
-- Select
-- Sort By
-- Inject/Reduce
+- **Each With Index**
+- **Reject**
+- **Find**
+- **Select**
+- **Sort By**
+- **Inject/Reduce**
 
 **Bonus:** If you find yourself with extra time, please:
 
