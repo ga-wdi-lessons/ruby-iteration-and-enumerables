@@ -1,6 +1,6 @@
 # Ruby Enumerables
 
-[![Build Status](https://travis-ci.org/ga-wdi-lessons/ruby-enumerables.svg?branch=master)](https://travis-ci.org/ga-wdi-lessons/ruby-enumerables)
+<!-- [![Build Status](https://travis-ci.org/ga-wdi-lessons/ruby-enumerables.svg?branch=master)](https://travis-ci.org/ga-wdi-lessons/ruby-enumerables) -->
 
 ## Learning Objectives
 
@@ -216,7 +216,9 @@ Loops execute a certain block of code a certain number of times.
 
 Enumerables are great at traversing, searching, filtering, and modifying collections of data in Ruby.
 
-**Why?** It DRYs up your code considerably. Consider:
+Ruby enumerables are **very** similar to higher order functions in Javascript, with a slightly different syntax.
+
+Enumerables **DRY** up your code considerably. Consider:
 
 #### `while` is a loop
 
@@ -303,6 +305,7 @@ Use `each` to do the following...
   flavors = [ "vanilla", "chocolate", "strawberry", "butter pecan", "cookies and cream", "rainbow" ]
   toppings = [ "gummi bears", "hot fudge", "butterscotch", "rainbow sprinkles", "chocolate sprinkles" ]
   ```
+Hint: Use nested enumerables or check out [product](http://apidock.com/ruby/Array/product)
 
 ### Map (10 / 105)
 
@@ -419,34 +422,22 @@ Instructions: Each group will spend **10 minutes** using Ruby documentation to l
 
 The enumerables are:
 
-- **Each With Index**
-- **Reject**
-- **Find**
-- **Select**
-- **Sort By**
-- **Inject/Reduce**
+- **[Each With Index](http://ruby-doc.org/core-2.4.0/Enumerable.html#method-i-each_with_index)**
+- **[Reject](http://ruby-doc.org/core-2.4.0/Enumerable.html#method-i-reject)**
+- **[Find](http://ruby-doc.org/core-2.4.0/Enumerable.html#method-i-find)**
+- **[Select](http://ruby-doc.org/core-2.4.0/Enumerable.html#method-i-select)**
+- **[Sort By](http://ruby-doc.org/core-2.4.0/Enumerable.html#method-i-sort_by)**
+- **[Inject/Reduce](http://ruby-doc.org/core-2.4.0/Enumerable.html#method-i-inject)**
 
 **Bonus:** If you find yourself with extra time, please:
 
 - Pick out another enumerable that wasn't assigned to a group.
 - ...and/or think of another example for your assigned enumerable.
 
-## Exercise
-
-If you didn't already complete this bonus, try it now:
-
-Print out every possible combination of the below ice cream flavors and toppings.
-
-```ruby
-flavors = [ "vanilla", "chocolate", "strawberry", "butter pecan", "cookies and cream", "rainbow" ]
-toppings = [ "gummi bears", "hot fudge", "butterscotch", "rainbow sprinkles", "chocolate sprinkles" ]
-```
-
-> Hint: "nest"
 
 ## Homework: High Card
 
-Combine your knowledge of Ruby basics and enumerables to make our old nemesis a piece of cake...
+Combine your knowledge of Ruby basics and enumerables to make a simple card game. 
 
 [High Card](https://github.com/ga-wdi-exercises/high_card)
 
