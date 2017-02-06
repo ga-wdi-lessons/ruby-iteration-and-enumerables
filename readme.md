@@ -1,4 +1,4 @@
-# Ruby Enumerables
+# Ruby Iteration & Enumerables
 
 <!-- [![Build Status](https://travis-ci.org/ga-wdi-lessons/ruby-enumerables.svg?branch=master)](https://travis-ci.org/ga-wdi-lessons/ruby-enumerables) -->
 
@@ -18,7 +18,7 @@ Whenever we talk about data in Ruby, its important to review how Ruby handles gr
 
 We learned how to loop through data in Javascript. Now we're going to learn how to do them in Ruby. We'll start with the basics, but then...
 
-We will be going over enumerables in Ruby, one of the most powerful modules that comes included in the language out-of-the-box.
+We will be going over enumerables in Ruby, some of the most powerful methods that come included in the language out-of-the-box. Enumerables are the Ruby equivalent of higher order functions in Javascript and can be used to iterate through and / or modify collections.
 
 ## Review: Ruby Collections
 
@@ -216,7 +216,7 @@ Loops execute a certain block of code a certain number of times.
 
 Enumerables are great at traversing, searching, filtering, and modifying collections of data in Ruby.
 
-Ruby enumerables are **very** similar to higher order functions in Javascript, with a slightly different syntax.
+Ruby enumerables **are the same thing as higher order functions in Javascript**, albeit in a Ruby syntax. Also, there are **many** more enumerables available to us in Ruby. A list of them can be found  in the [Ruby Docs](http://ruby-doc.org/core-2.2.3/Enumerable.html)
 
 Enumerables **DRY** up your code considerably. Consider:
 
@@ -435,19 +435,19 @@ The enumerables are:
 - ...and/or think of another example for your assigned enumerable.
 
 
-## Homework: High Card
-
-Combine your knowledge of Ruby basics and enumerables to make a simple card game. 
-
-[High Card](https://github.com/ga-wdi-exercises/high_card)
-
 ## Sample quiz questions
 
 1. What is the difference between `loops` and `enumerables` in Ruby?
 1. What are some examples of loops in Ruby that are not in JS?
-2. Differentiate between Ruby's `each` and `map` methods
-3. What is an `iteration` variable?
-4. List 5 useful Ruby enumerable methods
+1. Differentiate between Ruby's `each` and `map` methods
+1. What is an `iteration` variable?
+1. List 5 useful Ruby enumerable methods
+
+## Homework: High Card
+
+Combine your knowledge of Ruby basics and enumerables to make a simple card game.
+
+[High Card](https://github.com/ga-wdi-exercises/high_card)
 
 ## Resources
 
