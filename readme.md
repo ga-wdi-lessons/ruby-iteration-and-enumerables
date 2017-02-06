@@ -18,7 +18,7 @@ Whenever we talk about data in Ruby, its important to review how Ruby handles gr
 
 We learned how to loop through data in Javascript. Now we're going to learn how to do them in Ruby. We'll start with the basics, but then...
 
-We will be going over enumerables in Ruby, some of the most powerful methods that come included in the language out-of-the-box. Enumerables are the Ruby equivalent of higher order functions in Javascript and can be used to iterate through and / or modify collections.
+We will be going over enumerables in Ruby, some of the most powerful methods that come included in the language out-of-the-box. Enumerables are higher order functions and can be used to iterate through and / or modify collections.
 
 ## Review: Ruby Collections
 
@@ -216,7 +216,7 @@ Loops execute a certain block of code a certain number of times.
 
 Enumerables are great at traversing, searching, filtering, and modifying collections of data in Ruby.
 
-Ruby enumerables **are the same thing as higher order functions in Javascript**, albeit in a Ruby syntax. Also, there are **many** more enumerables available to us in Ruby. A list of them can be found  in the [Ruby Docs](http://ruby-doc.org/core-2.2.3/Enumerable.html)
+Ruby enumerables are **higher order functions**. They're similar to the ones you've already seen in Javascript, but with a slightly different syntax. However, there are **many** more enumerables available to us in Ruby. A list of them can be found  in the [Ruby Docs](http://ruby-doc.org/core-2.2.3/Enumerable.html).
 
 Enumerables **DRY** up your code considerably. Consider:
 
