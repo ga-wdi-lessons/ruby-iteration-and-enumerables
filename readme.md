@@ -129,7 +129,7 @@ If you would like to test them out, you might try this:
 - Replace the contents with the next snippet
 - Repeat
 
-#### while
+#### [while](https://ruby-doc.org/core-2.2.0/doc/syntax/control_expressions_rdoc.html#label-while+Loop)
 
 ```rb
 users = ["Alice", "Bob", "Carol"]
@@ -140,7 +140,7 @@ while index < users.length
 end
 ```
 
-#### until
+#### [until](https://ruby-doc.org/core-2.2.0/doc/syntax/control_expressions_rdoc.html#label-until+Loop)
 
 ```rb
 users = ["Alice", "Bob", "Carol"]
@@ -151,7 +151,7 @@ until index == users.length
 end
 ```
 
-#### loop
+#### [loop](https://ruby-doc.org/core-2.2.0/Kernel.html#method-i-loop)
 
 ```rb
 users = ["Alice", "Bob", "Carol"]
@@ -163,7 +163,7 @@ loop do
 end
 ```
 
-#### .times
+#### [.times](https://ruby-doc.org/core-2.2.0/Integer.html#method-i-times)
 
 ```rb
 users = ["Alice", "Bob", "Carol"]
