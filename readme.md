@@ -121,7 +121,7 @@ Carol
 
 If you would like to test them out, you might try this:
 
-1. Create a new file in your "in-class" directory called `loops.rb`
+- Create a new file in your "in-class" directory called `loops.rb`
 - Copy and paste **one** of the snippets into the file
 - Run the file with `$ ruby loops.rb`
 - Observe the result
