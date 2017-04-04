@@ -47,7 +47,7 @@ users = ["Alice", "Bob", "Carol"]
 
 <details>
 <summary>What are two ways of adding an item to the end of an array of unknown length in Ruby?</summary>
-`.push` and `<<`
+<code>.push</code> and <code><<</code>
 </details>
 
 <!-- Specifying "unknown length" because users[n] should not be one of the methods. -->
@@ -73,7 +73,7 @@ user = {
 - `user[:name] = "Bob"`
 - `user[:zip] = 55408`
 - `user[:skills].last`
-- `user[:skills] < "design"`
+- `user[:skills] << "design"`
 
 ### Quick Quiz
 
