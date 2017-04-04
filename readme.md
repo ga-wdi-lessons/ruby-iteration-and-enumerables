@@ -16,15 +16,15 @@ One of the most common things we do as developers is to iterate through data str
 
 Whenever we talk about data in Ruby, its important to review how Ruby handles groups of data.
 
-We learned how to loop through data in Javascript. Now we're going to learn how to do them in Ruby. We'll start with the basics, but then...
-
-We will be going over enumerables in Ruby, some of the most powerful methods that come included in the language out-of-the-box. Enumerables are higher order functions and can be used to iterate through and / or modify collections.
+We learned how to iterate over collections in JavaScript using loops and then higher order functions.
+Now we're going to learn the same in Ruby.
+Just like in JavaScript, we'll start talking about loops before talking about how to execute a particular code block for each element of a collection.
 
 ## Review: Ruby Collections
 
 <details>
 <summary>What are the different types of collections in Ruby?</summary>
-Arrays `[]` and hashes `{}`
+Arrays <code>[]</code> and hashes <code>{}</code>
 </details>
 
 ### [Arrays](http://ruby-doc.org/core-2.3.0/Array.html)
@@ -46,7 +46,7 @@ users = ["Alice", "Bob", "Carol"]
 - `users.join(" and ")`
 
 <details>
-<summary>What are the two ways of adding items to the end of an array of unknown length in Ruby?</summary>
+<summary>What are two ways of adding an item to the end of an array of unknown length in Ruby?</summary>
 `.push` and `<<`
 </details>
 
@@ -73,9 +73,9 @@ user = {
 - `user[:name] = "Bob"`
 - `user[:zip] = 55408`
 - `user[:skills].last`
-- `user[:skills] << "design"`
+- `user[:skills] < "design"`
 
-#### Quick Quiz
+### Quick Quiz
 
 -  What's another "rubyist" way to add items to an array?
 -  What is one main difference between Ruby's `hashes` and Javascript's `object literals`?
@@ -90,12 +90,12 @@ Another similarity Ruby shares with Javascript is base support for various types
 
 <details>
 <summary>What loops did we use in Javascript?</summary>
-`while`, `do...while`, `for`, `for...in`, `.forEach`
+<code>while</code>, <code>do...while</code>, <code>for</code>, <code>for...in</code>, <code>.forEach</code>
 </details>
 
 ### Looping with Ruby
 
-The closest equivalent to Javascript's `for` loop is Ruby's `for...in` loop
+The closest equivalent to Javascript's `for` loop is Rubys `for...in` loop
 
 ```rb
 users = ["Alice", "Bob", "Carol"]
@@ -105,11 +105,11 @@ end
 ```
 
 <details>
-<summary>What happens if you change it to `for person in users do`? What other change will you need to make?</summary>
-`puts person` instead of `puts user`
+<summary>What happens if you change it to <code>for person in users do</code>? What other change will you need to make?</summary>
+<code>puts person</code> instead of <code>puts user</code>
 </details>
 
-#### *In English*, describe the differences between `while`, `until`, `loop`, and `.times`.
+> *In English*, describe the differences between `while`, `until`, `loop`, and `.times`.
 
 All the snippets below have the exact same result:
 
@@ -121,13 +121,13 @@ Carol
 
 If you would like to test them out, you might try this:
 
-- Create a new file in your "in-class" directory called `loops.rb`
-- Copy and paste **one** of the snippets into the file
-- Run the file with `$ ruby loops.rb`
-- Observe the result
-- Delete the contents of the file
-- Replace the contents with the next snippet
-- Repeat
+1. Create a new file in your "sandbox" directory called `loops.rb`
+2. Copy and paste **one** of the snippets into the file
+3. Run the file with `$ ruby loops.rb`
+4. Observe the result
+5. Delete the contents of the file
+6. Replace the contents with the next snippet
+7. Repeat
 
 #### [while](https://ruby-doc.org/core-2.2.0/doc/syntax/control_expressions_rdoc.html#label-while+Loop)
 
@@ -173,13 +173,13 @@ end
 ```
 
 <details>
-<summary>If we change `puts users[index]` to `puts index`, what will the result be?</summary>
-`1 2 3`
+<summary>If we change <code>puts users[index]</code> to <code>puts index</code>, what will the result be?</summary>
+<code>1 2 3</code>
 </details>
 
 <details>
-<summary>What is the purpose of `break`? What loops can you use it inside?</summary>
-`break` halts the current iteration of the loop. It can be used with any loop.
+<summary>What is the purpose of <code>break</code>? What loops can you use it inside?</summary>
+<code>break</code> halts the current iteration of the loop. It can be used with any loop.
 </details>
 
 #### next
@@ -196,8 +196,8 @@ end
 ```
 
 <details>
-<summary>What is `next`, and how is it different from `break`?</summary>
-`next` tells the computer to skip the rest of the code inside the loop for this iteration, and go to the next iteration of the loop. `break` stops the loop iterating altogether.
+<summary>What is <code>next</code>, and how is it different from <code>break</code>?</summary>
+<code>next</code> tells the computer to skip the rest of the code inside the loop for this iteration, and go to the next iteration of the loop. <code>break</code> stops the loop iterating altogether.
 </details>
 
 > [Further Reading on Ruby loops](http://www.tutorialspoint.com/ruby/ruby_loops.htm)
@@ -216,7 +216,7 @@ Loops execute a certain block of code a certain number of times.
 
 Enumerables are great at traversing, searching, filtering, and modifying collections of data in Ruby.
 
-Ruby enumerables are **higher order functions**. They're similar to the ones you've already seen in Javascript, but with a slightly different syntax. However, there are **many** more enumerables available to us in Ruby. A list of them can be found  in the [Ruby Docs](http://ruby-doc.org/core-2.2.3/Enumerable.html).
+Ruby enumerables are **higher order functions**. Theyre similar to the ones you've already seen in Javascript, but with a slightly different syntax. However, there are **many** more enumerables available to us in Ruby. A list of them can be found  in the [Ruby Docs](http://ruby-doc.org/core-2.2.3/Enumerable.html).
 
 Enumerables **DRY** up your code considerably. Consider:
 
@@ -231,7 +231,7 @@ while index < users.length
 end
 ```
 
-#### `each` is an enumerable
+#### `each` is an enumerator and `users` is an enumberable
 
 ```rb
 users = ["Alice", "Bob", "Carol"]
@@ -240,13 +240,13 @@ users.each do |user|
 end
 ```
 
-- [Documentation](http://ruby-doc.org/core-2.2.3/Enumerable.html)
+- [Enumerable Documentation](http://ruby-doc.org/core-2.2.3/Enumerable.html)
 
 ### Syntax
 
 Try running these two code snippets:
 
-> This one is copied from above
+> This one is same as above
 
 ```rb
 users = ["Alice", "Bob", "Carol"]
@@ -261,18 +261,18 @@ users.each{|user| puts user}
 ```
 
 <details>
-<summary>What is the difference in the result of these two snippets?</summary>
-There's no difference: they're two ways of writing the exact same thing.
+<summary>What is the semantic difference between these two snippets?</summary>
+They are equivalent
 </details>
 
 <details>
-<summary>What happens if you change `users.each do |user|` to `users.each do |person|`? What else needs to change?</summary>
-`puts user` needs to become `puts person`.
+<summary>What happens if you change <code>users.each do |user|</code> to <code>users.each do |person|</code>? What else needs to change?</summary>
+<code>puts user</code> needs to become <code>puts person</code>.
 </details>
 
 ### Exercise: Practice Each (10 / 95)
 
-Use `each` to do the following...  
+Use `each` to do the following...
 
 - Say hello to everybody in the below array of names (sample output: `Hello Donald!`).
 
@@ -315,19 +315,30 @@ Run these two snippets separately:
 
 ```rb
 cart = ["shoes", "watch", "computer"]
-uppercase = cart.each{|product| product.upcase }
+uppercase = cart.each do |product|
+  caps_product = product.upcase
+  puts caps_product
+  caps_product
+end
 puts uppercase.join(", ")
 ```
 
 ```rb
 cart = ["shoes", "watch", "computer"]
-uppercase = cart.map{|product| product.upcase }
+uppercase = cart.map do |product|
+  caps_product = product.upcase
+  puts caps_product
+  caps_product
+end
 puts uppercase.join(", ")
 ```
 
 <details>
 <summary>How would you explain the difference in the result?</summary>
-`.each` returns the original array on which it was performed. `.map` returns a new array with the changes in the block applied to each element.
+<ul>
+  <li><code>.each</code> executes the code block for each item in the original array and returns the original array regardless of what the block returns.</li>
+  <li><code>.map</code> returns a new array with the changes in the block applied to each element.</li>
+</ul>
 </details>
 
 #### Explore 2
@@ -366,8 +377,8 @@ puts uppercase
 Below is the same snippet, but with `.map!` instead of `.map`.
 
 <details>
-<summary>What does `!` often indicate in Ruby?</summary>
-That this method is "dangerous", usually because it will modify the object upon which it was called.
+<summary>What does <code>!</code> often indicate in Ruby?</summary>
+That this method is "dangerous", usually because it will modify, or <strong>mutate</strong> the object upon which it was called.
 </details>
 
 ```rb
@@ -378,8 +389,8 @@ puts uppercase
 ```
 
 <details>
-<summary>What's the difference between `.map` and `.map!`?</summary>
-`.map` leaves the original array alone, whereas `.map!` changes it.
+<summary>What's the difference between <code>.map</code> and <code>.map!</code>?</summary>
+<code>.map</code> leaves the original array alone, whereas <code>.map!</code> changes it.
 </details>
 
 ### Exercise: Practice Map (5 / 120)
@@ -391,7 +402,7 @@ Use `map` to do the following...
   ```ruby
   first_names = [ "Donald", "Daisy", "Daffy" ]
 
-  #=> ["Donald Duck", "Daisy Duck", "Daffy Duck"]
+  #= ["Donald Duck", "Daisy Duck", "Daffy Duck"]
   ```
 
 2. Create an array containing the squared values of every number in this array.
@@ -432,7 +443,7 @@ The enumerables are:
 **Bonus:** If you find yourself with extra time, please:
 
 - Pick out another enumerable that wasn't assigned to a group.
-- ...and/or think of another example for your assigned enumerable.
+- and/or think of another example for your assigned enumerable.
 
 
 ## Sample quiz questions
