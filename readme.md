@@ -16,9 +16,9 @@ One of the most common things we do as developers is to iterate through data str
 
 Whenever we talk about data in Ruby, its important to review how Ruby handles groups of data.
 
-We learned how to iterate over collections in JavaScript using loops and then higher order functions.
+We learned how to iterate over collections in Javascript using loops and then higher order functions.
 Now we're going to learn the same in Ruby.
-Just like in JavaScript, we'll start talking about loops before talking about how to execute a particular code block for each element of a collection.
+Just like in Javascript, we'll start talking about loops before talking about how to execute a particular code block for each element of a collection.
 
 ## Review: Ruby Collections
 
