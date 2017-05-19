@@ -302,6 +302,8 @@ Use `each` to do the following...
 
 - Print out the Celsius values for an array containing Fahrenheit values.
 
+  > Hint: `C = (F - 32) * (5 / 9)`
+
   ```ruby
   fahrenheit_temps = [ -128.6, 0, 32, 140, 212 ]
   ```
