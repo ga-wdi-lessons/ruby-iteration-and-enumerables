@@ -77,10 +77,27 @@ user = {
 
 ### Quick Quiz
 
--  What's another "rubyist" way to add items to an array?
--  What is one main difference between Ruby's `hashes` and Javascript's `object literals`?
--  What are some useful methods we can call on collections?
--  Where would I go look if I wanted to find more methods?
+1.  What's another "rubyist" way to add items to an array?
+2.  What is one main difference between Ruby's **hashes** and Javascript's **object literals**?
+3.  What are some useful methods we can call on collections?
+4.  Where would I go look if I wanted to find more methods?
+
+<details>
+  <summary>
+    Answers
+  </summary>
+  <ol>
+    <li> <code> [1,2,3] + [4,5] </code></li>
+    <li> The syntax for referencing properties differs.
+      <ul>
+        <li>JS: <code>user.name</code> or <code>user["name"]</code> </li>
+        <li>Ruby: <code>user[:name]</code> </li>
+      </ul>
+    </li>
+    <li>.push, .pop, .join</li>
+    <li>  https://ruby-doc.org/core-2.2.3/Enumerable.html </li>
+  </ol>
+</details>
 
 ## Loops (20 / 30)
 
@@ -132,35 +149,38 @@ If you would like to test them out, you might try this:
 #### [while](https://ruby-doc.org/core-2.2.0/doc/syntax/control_expressions_rdoc.html#label-while+Loop)
 
 ```rb
-users = ["Alice", "Bob", "Carol"]
-index = 0
-while index < users.length
-  puts users[index]
-  index += 1
+input = ""
+puts "You must guess the Magic Words to exit the while loop!"
+while input != "Magic Words" do
+  puts "What are the Magic Words?"
+  input = gets.chomp
 end
+puts "You made it out! Congrats!"
 ```
 
 #### [until](https://ruby-doc.org/core-2.2.0/doc/syntax/control_expressions_rdoc.html#label-until+Loop)
 
+
 ```rb
-users = ["Alice", "Bob", "Carol"]
-index = 0
-until index == users.length
-  puts users[index]
-  index += 1
+input = ""
+puts "You must guess the Magic Words to exit the while loop!"
+until input == "Magic Words" do
+  puts "What are the Magic Words?"
+  input = gets.chomp
 end
+puts "You made it out! Congrats!"
 ```
 
 #### [loop](https://ruby-doc.org/core-2.2.0/Kernel.html#method-i-loop)
 
 ```rb
-users = ["Alice", "Bob", "Carol"]
-index = 0
+puts "You must guess the Magic Words to exit the while loop!"
 loop do
-  puts users[index]
-  index += 1
-  break if index == users.length
+  puts "What are the Magic Words?"
+  input = gets.chomp
+  break if input == "Magic Words"
 end
+puts "You made it out! Congrats!"
 ```
 
 #### [.times](https://ruby-doc.org/core-2.2.0/Integer.html#method-i-times)
@@ -216,9 +236,9 @@ Loops execute a certain block of code a certain number of times.
 
 Enumerables are great at traversing, searching, filtering, and modifying collections of data in Ruby.
 
-Ruby enumerables are **higher order functions**. They're similar to the ones you've already seen in Javascript, but with a slightly different syntax. However, there are **many** more enumerables available to us in Ruby. A list of them can be found  in the [Ruby Docs](http://ruby-doc.org/core-2.2.3/Enumerable.html).
+Ruby enumerables are **higher order functions**. They're similar to the ones we've already seen in Javascript, but with a slightly different syntax. In Ruby, there are **many** more enumerables available to us. A list of them can be found  in the [Ruby Docs](http://ruby-doc.org/core-2.2.3/Enumerable.html).
 
-Enumerables **DRY** up your code considerably. Consider:
+Enumerables **DRY** up your code considerably and enhance readability. Consider:
 
 #### `while` is a loop
 
@@ -257,12 +277,12 @@ end
 
 ```rb
 users = ["Alice", "Bob", "Carol"]
-users.each{|user| puts user}
+users.each{ |user| puts user }
 ```
 
 <details>
-<summary>What is the semantic difference between these two snippets?</summary>
-They are equivalent
+<summary>What is the difference between these two snippets?</summary>
+They are equivalent, though the 'do' 'end' is said to be more semantic and closer to natural language.
 </details>
 
 <details>
@@ -305,7 +325,12 @@ Use `each` to do the following...
   flavors = [ "vanilla", "chocolate", "strawberry", "butter pecan", "cookies and cream", "rainbow" ]
   toppings = [ "gummi bears", "hot fudge", "butterscotch", "rainbow sprinkles", "chocolate sprinkles" ]
   ```
-Hint: Use nested enumerables or check out [product](http://apidock.com/ruby/Array/product)
+<details>
+  <summary>
+    Hint
+  </summary>
+  Use nested enumerables or check out [product](http://apidock.com/ruby/Array/product)
+</details>
 
 ### Map (10 / 105)
 
@@ -413,7 +438,9 @@ Use `map` to do the following...
   # => [1, 9, 81, 121, 10000]
   ```
 
-3. Create an array with the Celsius values for these Fahrenheit values. Hint: C = (F &minus; 32) &times; (5 &divide; 9)
+3. Create an array with the Celsius values for these Fahrenheit values.
+
+  > Hint: `C = (F - 32) * (5 / 9)`
 
   ```ruby
   fahrenheit_temps = [ -128.6, 0, 32, 140, 212 ]
