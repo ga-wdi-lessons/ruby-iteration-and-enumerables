@@ -95,7 +95,7 @@ user = {
       </ul>
     </li>
     <li>.push, .pop, .join</li>
-    <li>  https://ruby-doc.org/core-2.2.3/Enumerable.html </li>
+    <li> <a href="https://ruby-doc.org/core-2.2.3/Enumerable.html">Ruby Docs!</a> </li>
   </ol>
 </details>
 
@@ -128,15 +128,8 @@ end
 
 > *In English*, describe the differences between `while`, `until`, `loop`, and `.times`.
 
-All the snippets below have the exact same result:
 
-```
-Alice
-Bob
-Carol
-```
-
-If you would like to test them out, you might try this:
+Set up your development environment for testing out the different types of loops found in the code snippets below...
 
 1. Create a new file in your "sandbox" directory called `loops.rb`
 2. Copy and paste **one** of the snippets into the file
@@ -145,6 +138,7 @@ If you would like to test them out, you might try this:
 5. Delete the contents of the file
 6. Replace the contents with the next snippet
 7. Repeat
+
 
 #### [while](https://ruby-doc.org/core-2.2.0/doc/syntax/control_expressions_rdoc.html#label-while+Loop)
 
@@ -329,7 +323,7 @@ Use `each` to do the following...
   <summary>
     Hint
   </summary>
-  Use nested enumerables or check out [product](http://apidock.com/ruby/Array/product)
+  Use nested enumerable methods or check out <a href="http://apidock.com/ruby/Array/product">product</a>.
 </details>
 
 ### Map (10 / 105)
