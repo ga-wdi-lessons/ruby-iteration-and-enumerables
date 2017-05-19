@@ -236,7 +236,7 @@ Loops execute a certain block of code a certain number of times.
 
 Enumerables are great at traversing, searching, filtering, and modifying collections of data in Ruby.
 
-Ruby enumerables are **higher order functions**. They're similar to the ones we've already seen in Javascript, but with a slightly different syntax. In Ruby, there are **many** more enumerables available to us. A list of them can be found  in the [Ruby Docs](http://ruby-doc.org/core-2.2.3/Enumerable.html).
+Ruby enumerables are **higher order functions**. They're similar to the ones we've already seen in Javascript, but with a slightly different syntax. In Ruby, there are **many** more enumerables available to us. A list of them can be found in the [Ruby Docs](http://ruby-doc.org/core-2.2.3/Enumerable.html).
 
 Enumerables **DRY** up your code considerably and enhance readability. Consider:
 
